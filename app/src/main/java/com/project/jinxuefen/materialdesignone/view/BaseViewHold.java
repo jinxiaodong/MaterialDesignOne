@@ -14,6 +14,6 @@ public abstract class BaseViewHold<T> extends RecyclerView.ViewHolder{
     }
 
 
-    
+
     public abstract void onBindViewHolder(int position,List<T> mData);
 }
