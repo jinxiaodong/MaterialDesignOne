@@ -16,7 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".CoordinatorLayoutActivity" />
-        <activity android:name=".MaterialDesignActivity"></activity>
+        <activity
+            android:name=".MaterialDesignActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
     </application>
 
 </manifest>

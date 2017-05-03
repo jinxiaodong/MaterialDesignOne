@@ -7,22 +7,36 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 
 public class MainActivity extends Activity {
 
 
+    @Bind(R.id.CoordinatorLayout)
     TextView CoordinatorLayout;
+    @Bind(R.id.AppBarLayout)
+    TextView AppBarLayout;
+    @Bind(R.id.activity_main)
     LinearLayout activityMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CoordinatorLayout = (TextView) findViewById(R.id.CoordinatorLayout);
+        ButterKnife.bind(this);
         CoordinatorLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CoordinatorLayoutActivity.class);
+                startActivity(intent);
+            }
+        });
+        AppBarLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MaterialDesignActivity.class);
                 startActivity(intent);
             }
         });

@@ -11,7 +11,8 @@ import com.project.jinxuefen.materialdesignone.view.APSTSViewPager;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MaterialDesignActivity extends AppCompatActivity {
+public class MaterialDesignActivity extends AppCompatActivity{
+
 
     @Bind(R.id.tablayout)
     TabLayout tablayout;
@@ -27,5 +28,19 @@ public class MaterialDesignActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_material_design);
         ButterKnife.bind(this);
+        initData();
+    }
+
+    private void initData() {
+        tablayout.setupWithViewPager(viewpager);
+        viewpager.setNoFocus(false);
+        viewpager.setAdapter(new TableFragmentAdapter(getSupportFragmentManager()));
+    }
+
+    @Override
+    protected void onDestroy() {
+
+        super.onDestroy();
+        ButterKnife.unbind(this);
     }
 }
